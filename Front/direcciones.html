@@ -9,7 +9,8 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
     <!-- Custom Stylesheet -->
-    <link href="./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.0.js"
         integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
@@ -55,51 +56,18 @@
                 <div class="header-left">
                     <div class="input-group icons">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i
+                                    class="mdi mdi-magnify"></i></span>
                         </div>
                         <input type="search" class="form-control" placeholder="Buscar" aria-label="Search Dashboard">
                         <div class="drop-down   d-md-none">
-							<form action="#">
-								<input type="text" class="form-control" placeholder="Search">
-							</form>
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
                         </div>
                     </div>
                 </div>
 
-                <div class="input-group">
-                    <form id="idForm" method="post" enctype="multipart/form-data">
-                        <input id="filebase" type="file" name="file">
-                        <input type="submit" value="Upload">
-                    </form>
-                </div>
-
-                <script type="text/javascript">
-                
-                $("#idForm").submit(function(e){
-		e.preventDefault();
-		var formData = new FormData();
-		formData.append('file',$("#filebase")[0].files[0])
-		console.log($("#filebase")[0].files[0]);
-		$.ajax({
-		    url: 'http://172.21.32.64:5000/api/uploader',
-		    data: formData,
-		    cache: false,
-		    contentType: false,
-		    processData: false,
-		    method: 'POST',
-		    success: function(data){
-		        console.log(data);
-
-		    },
-		    error: function (XMLHttpRequest, textStatus, errorThrown) {
-		        console.log("Status: " + textStatus);
-		        console.log("Error: " + errorThrown);
-		    }
-        });
-    });
-                
-                
-                </script>
 
             </div>
         </div>
@@ -123,6 +91,18 @@
                 </div>
             </div>
             <!-- row -->
+            <div class="container">
+                <form id="idForm" class="input-group">
+                    <div class="input-group-prepend">
+                        <input class="input-group-text" type="submit" value="Upload">
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="filebase"
+                            aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </form>
+            </div>
 
             <div class="container-fluid">
                 <div class="row">
@@ -139,142 +119,7 @@
                                                 <td>DIRECCION</td>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-
-
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                            </tr>
+                                        <tbody id="felicidad">
                                         </tbody>
                                         <tfoot>
                                             <tr>
@@ -293,8 +138,42 @@
             </div>
             <!-- #/ container -->
         </div>
-
     </div>
+
+    <script type="text/javascript">
+
+        $("#idForm").submit(function (e) {
+            e.preventDefault();
+            var formData = new FormData();
+            formData.append('file', $("#filebase")[0].files[0])
+            console.log($("#filebase")[0].files[0]);
+            $.ajax({
+                url: 'http://172.21.32.64:5000/api/uploader',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
+                success: function (data) {
+                    var datos = JSON.parse(data);
+                    console.log(datos);
+
+                    datos.forEach(element => {
+                        $("#felicidad").append("<tr><td>" + element["documento_identidad"] + "</td><td>" + element["ciudad"] + "</td><td>" + element["direccion"] + "</td></tr>");
+                    });
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log("Status: " + textStatus);
+                    console.log("Error: " + errorThrown);
+                }
+            });
+        });
+
+
+
+
+    </script>
 
     <script src="plugins/common/common.min.js"></script>
     <script src="js/custom.min.js"></script>
@@ -302,7 +181,7 @@
     <script src="js/gleek.js"></script>
     <script src="js/styleSwitcher.js"></script>
 
-     <!-- #/ container <script src="./plugins/tables/js/jquery.dataTables.min.js"></script> -->
+    <!-- #/ container <script src="./plugins/tables/js/jquery.dataTables.min.js"></script> -->
     <script src="./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
     <script src="./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
 

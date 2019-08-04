@@ -21,8 +21,10 @@ def upload_file():
             filename = secure_filename(archivo.filename)
             filename = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             archivo.save(filename)
-            a = excel_to_json(filename).return_json()
-            return a
+            a = excel_to_json(filename)
+            b = a.return_json()
+            print (b)
+            return b
         else:
             return "errorororoeroeroe"
     return url_for('index')

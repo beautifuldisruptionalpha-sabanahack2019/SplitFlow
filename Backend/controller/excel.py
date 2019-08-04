@@ -21,6 +21,8 @@ class excel_to_json():
                 for i, cell in enumerate(row):
                     self.data[title[i]] = cell.value
                 self.f_json.append(self.data)
+                self.data = {}
 
     def return_json(self):
+        print (self.f_json)
         return json.dumps(self.f_json)
