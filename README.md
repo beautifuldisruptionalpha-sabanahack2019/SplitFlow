@@ -25,7 +25,7 @@ La API tiene los siguientes endpoints:
 - (GET) /: Envia por defecto los archivos estaticos de la Single Page Application de Front.
 - (GET) /analytics: Retorna el estado de analisis actual de la compañia.
 
-## FrontEnd
+## Frontend
 
 El front end de la aplicacion consisten en una Single Page Application hecha en ReactJS que
 utiliza las APIs de Google Mas para dibujar el map de congregaciones, distancias y tiempos
