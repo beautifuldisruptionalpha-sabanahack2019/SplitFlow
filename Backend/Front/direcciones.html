@@ -11,6 +11,8 @@
     <!-- Custom Stylesheet -->
     <link href="./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.0.js"
+        integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
 
 </head>
 
@@ -63,6 +65,41 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="input-group">
+                    <form id="idForm" method="post" enctype="multipart/form-data">
+                        <input id="filebase" type="file" name="file">
+                        <input type="submit" value="Upload">
+                    </form>
+                </div>
+
+                <script type="text/javascript">
+                
+                $("#idForm").submit(function(e){
+		e.preventDefault();
+		var formData = new FormData();
+		formData.append('file',$("#filebase")[0].files[0])
+		console.log($("#filebase")[0].files[0]);
+		$.ajax({
+		    url: 'http://172.21.32.64:5000/api/uploader',
+		    data: formData,
+		    cache: false,
+		    contentType: false,
+		    processData: false,
+		    method: 'POST',
+		    success: function(data){
+		        console.log(data);
+
+		    },
+		    error: function (XMLHttpRequest, textStatus, errorThrown) {
+		        console.log("Status: " + textStatus);
+		        console.log("Error: " + errorThrown);
+		    }
+        });
+    });
+                
+                
+                </script>
 
             </div>
         </div>
