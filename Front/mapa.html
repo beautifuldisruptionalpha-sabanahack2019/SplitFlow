@@ -6,14 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Mapa</title>
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="icon" type="img/logo-split.png" sizes="16x16" href="img/logo-split.png">
     <link href="./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.0.js"
         integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
 
 </head>
-
 <body>
 
 
@@ -25,16 +24,17 @@
         </div>
     </div>
 
+
     <div id="main-wrapper">
 
 
         <div class="nav-header">
             <div class="brand-logo">
                 <a href="">
-                    <b class="logo-abbr"><img src="" alt=""> </b>
-                    <span class="logo-compact"><img src="./images/" alt=""></span>
+                    <b class="logo-abbr"><img src="img/logo-split.png" alt=""> </b>
+                    <span class="logo-compact"><img src="./img/logo-split.png" alt=""></span>
                     <span class="brand-title">
-                        <img src="images/" alt="">
+                        <img src="img/logo-split.png" alt="">
                     </span>
                 </a>
             </div>
@@ -51,34 +51,37 @@
                 <div class="header-left">
                     <div class="input-group icons">
                         <div class="input-group-prepend">
-                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i
-                                    class="mdi mdi-magnify"></i></span>
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i class="mdi mdi-magnify"></i></span>
                         </div>
                         <input type="search" class="form-control" placeholder="Buscar" aria-label="Search Dashboard">
                         <div class="drop-down   d-md-none">
-                            <form action="#">
-                                <input type="text" class="form-control" placeholder="Search">
-                            </form>
+							<form action="#">
+								<input type="text" class="form-control" placeholder="Search">
+							</form>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
-    </div>
 
-    <div style="display: flex; justify-content: center; padding:15px">
-        <div>
 
-            <iframe src="https://www.google.com/maps/d/embed?mid=1jR2B99EL2RYYTbgZt7kF9GlNjpp5b_zv" width="840"
-                height="680" align="center"></iframe>
+        <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="./direcciones.html">Atrás</a></li>
+                        <li class="breadcrumb-item active"><a href="./mapa.html">Dashboard</a></li>
+                    </ol>
+                </div>
         </div>
+        </div>
+        <div style="display: flex; justify-content: center; padding:15px">
+            <div>
 
+                    <iframe src="https://www.google.com/maps/d/embed?mid=1YY280DX3KmwK3OaeZ9q1C9ZLY1vqr1Oi" width="840" height="680" align="center" ></iframe>
+            </div>
 
-
-
-
-    </div>
+        </div>
 
     </div>
 
@@ -88,7 +91,7 @@
     <script src="js/gleek.js"></script>
     <script src="js/styleSwitcher.js"></script>
 
-    <!-- #/ container <script src="./plugins/tables/js/jquery.dataTables.min.js"></script> -->
+     <!-- #/ container <script src="./plugins/tables/js/jquery.dataTables.min.js"></script> -->
     <script src="./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
     <script src="./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
 

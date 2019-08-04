@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Direcciones</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.0.js"
+        integrity="sha256-DYZMCC8HTC+QDr5QNaIcfR7VSPtcISykd+6eSmBW5qo=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+
+    <div id="main-wrapper">
+
+
+        <div class="nav-header">
+            <div class="brand-logo">
+                <a href="">
+                    <b class="logo-abbr"><img src="" alt=""> </b>
+                    <span class="logo-compact"><img src="./images/" alt=""></span>
+                    <span class="brand-title">
+                        <img src="images/" alt="">
+                    </span>
+                </a>
+            </div>
+        </div>
+
+        <div class="header">
+            <div class="header-content clearfix">
+
+                <div class="nav-control">
+                    <div class="hamburger">
+                        <span class="toggle-icon"><i class="icon-menu"></i></span>
+                    </div>
+                </div>
+                <div class="header-left">
+                    <div class="input-group icons">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-transparent border-0 pr-2 pr-sm-3" id="basic-addon1"><i
+                                    class="mdi mdi-magnify"></i></span>
+                        </div>
+                        <input type="search" class="form-control" placeholder="Buscar" aria-label="Search Dashboard">
+                        <div class="drop-down   d-md-none">
+                            <form action="#">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+
+
+        <div class="content-body">
+
+            <div class="row page-titles mx-0">
+                <div class="col p-md-0">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Direcciones</a></li>
+                        <li class="breadcrumb-item active"><a href="javascript:void(0)">Menú</a></li>
+                    </ol>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="container">
+                <form id="idForm" class="input-group">
+                    <div class="input-group-prepend">
+                        <input class="input-group-text" type="submit" value="Upload">
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="filebase"
+                            aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    </div>
+                </form>
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div id="myPlot1"></div>
+                </div>
+            </div>
+            <!-- #/ container -->
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $("#idForm").submit(function (e) {
+            e.preventDefault();
+            var formData = new FormData();
+            formData.append('file', $("#filebase")[0].files[0])
+            console.log($("#filebase")[0].files[0]);
+            $.ajax({
+                url: 'http://172.21.32.64:5000/api/uploader',
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                method: 'POST',
+                success: function (data) {
+                    var datos = JSON.parse(data);
+                    console.log(datos);
+
+                    datos.forEach(element => {
+                        $("#felicidad").append("<tr><td>" + element["documento_identidad"] + "</td><td>" + element["ciudad"] + "</td><td>" + element["direccion"] + "</td></tr>");
+                    });
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    console.log("Status: " + textStatus);
+                    console.log("Error: " + errorThrown);
+                }
+            });
+        });
+
+
+
+
+    </script>
+
+    <script src="plugins/common/common.min.js"></script>
+    <script src="js/custom.min.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/gleek.js"></script>
+    <script src="js/styleSwitcher.js"></script>
+
+    <!-- #/ container <script src="./plugins/tables/js/jquery.dataTables.min.js"></script> -->
+    <script src="./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+    <script src="./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+
+</body>
+
+<
