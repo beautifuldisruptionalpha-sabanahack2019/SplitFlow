@@ -1,5 +1,7 @@
 # SplitFlow 
 
+![Mapa con triangulaciones de ubicacion de usuarios.](mapViewFront.png)
+
 En este repositorio se encuentra el proyecto y prototipo presentado.
 
 - Backend: Incluye el servidor desarrollado en Python Flask realizado que consiste en una API REST.
