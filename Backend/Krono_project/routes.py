@@ -38,13 +38,3 @@ def uploaded_file(filename):
 def index():
     return 'Hola'
 
-
-'''@app.route('/uploader', methods=['GET', 'POST'])
-def upload_file():
-    if request.method == 'POST':
-        f = request.files['file']
-        f.save(f.filename)
-        a = excel_to_json(f).return_json()
-        return a
-    else:
-        return 'metodo no valido'''
