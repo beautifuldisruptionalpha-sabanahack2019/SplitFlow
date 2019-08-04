@@ -5,4 +5,4 @@ from Krono_project import app
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return 'Hola'
