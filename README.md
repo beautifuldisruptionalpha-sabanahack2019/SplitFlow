@@ -1,6 +1,6 @@
 # SplitFlow 
 
-![Mapa con triangulaciones de ubicacion de usuarios.](mapViewFront.png)
+![SplitFlow](logo.png)
 
 En este repositorio se encuentra el proyecto y prototipo presentado.
 
@@ -26,6 +26,8 @@ La API tiene los siguientes endpoints:
 - (GET) /analytics: Retorna el estado de analisis actual de la compañia.
 
 ## Frontend
+
+![Mapa con triangulaciones de ubicacion de usuarios.](mapViewFront.png)
 
 El front end de la aplicacion consisten en una Single Page Application hecha en ReactJS que
 utiliza las APIs de Google Mas para dibujar el map de congregaciones, distancias y tiempos
